@@ -1,4 +1,4 @@
-only-vanilla-icrecream
+only-vanilla-icecream
 ======================
 
 Configurations for OS X
