@@ -7,8 +7,9 @@
 # Environment Variables
 # ---------------------
 #	- Projects
-	# 
-	# 
+	export JAVA_HOME=$()
+	export ANT_HOME=/usr/local/Cellar/ant/1.9.3
+	
 # 	- Proxy Configuration
 	# export http_proxy="  "
 	# export https_proxy="  "
@@ -46,11 +47,21 @@
 
 	# gitlog: compact and colorized git log
 	alias gitlog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+	
+	# gitnp: remove proxy from git
+	alias gitnp="git config --global --unset http.proxy; git config --global --unset https.proxy"
+
+	# gitpp: include proxy in git
+	alias gitpp="git config --global http.proxy=''; git config --global https.proxy=''"
 
 # -----
 # Misc.
 # -----
+	 # Start RBENV
 	eval "$(rbenv init -)"
+	
+	# Homebrew command tab-completion
+	source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 
 # ----
 # PATH
