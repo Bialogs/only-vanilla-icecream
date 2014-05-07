@@ -7,8 +7,8 @@
 # Environment Variables
 # ---------------------
 #	- Projects
-	export JAVA_HOME=$()
-	export ANT_HOME=/usr/local/Cellar/ant/1.9.3
+	export JAVA_HOME=$(/usr/libexec/java_home)
+	export ANT_HOME=/usr/local/Cellar/ant/1.9.4
 	
 # 	- Proxy Configuration
 	# export http_proxy="  "
@@ -57,11 +57,14 @@
 # -----
 # Misc.
 # -----
-	 # Start RBENV
+	# Start RBENV
 	eval "$(rbenv init -)"
 	
 	# Homebrew command tab-completion
 	source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+	
+	# Load NVM
+	[ -s "/Users/kfagan/.nvm/nvm.sh" ] && . "/Users/kfagan/.nvm/nvm.sh"
 
 # ----
 # PATH
