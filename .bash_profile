@@ -63,6 +63,11 @@
 	# Homebrew command tab-completion
 	source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 	
+	# Git tab-completion
+	if [ -f `brew --prefix`/etc/bash_completion ]; then
+	    . `brew --prefix`/etc/bash_completion
+	fi
+	
 	# Load NVM
 	[ -s "/Users/kfagan/.nvm/nvm.sh" ] && . "/Users/kfagan/.nvm/nvm.sh"
 
