@@ -53,6 +53,8 @@
 
 	# gitpp: include proxy in git
 	alias gitpp="git config --global http.proxy=''; git config --global https.proxy=''"
+	
+	#chrome
 
 # -----
 # Misc.
