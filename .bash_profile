@@ -54,8 +54,10 @@
 	# gitpp: include proxy in git
 	alias gitpp="git config --global http.proxy=''; git config --global https.proxy=''"
 	
-	#chrome
+	#unsafechrome: run chrome in unsafe mode
+	alias unsafechrome="open -a Google\ Chrome --args --disable-web-security"
 
+	
 # -----
 # Misc.
 # -----
