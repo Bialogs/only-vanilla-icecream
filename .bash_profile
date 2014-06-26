@@ -62,7 +62,8 @@
 # Misc.
 # -----
 	# Start RBENV
-	eval "$(rbenv init -)"
+	if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 	
 	# Homebrew command tab-completion
 	source `brew --repository`/Library/Contributions/brew_bash_completion.sh
