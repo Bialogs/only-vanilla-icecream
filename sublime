@@ -7,5 +7,6 @@
 	],
 	"save_on_focus_lost": true,
 	"tab_size": 2,
+	"tab_width": 2,
 	"translate_tabs_to_spaces": true
 }
