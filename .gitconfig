@@ -1,0 +1,20 @@
+[user]
+	name = Kyle Fagan
+	email = 
+[credential]
+	helper = osxkeychain
+[github]
+	user = Bialogs
+	token = 
+
+[push]
+	default = simple
+[http]
+[https]
+[mergetool "sublime"]
+	cmd = subl -w $MERGED
+	trustExitCode = false
+[merge]
+	tool = sublime
+[core]
+	editor = subl -n -w
