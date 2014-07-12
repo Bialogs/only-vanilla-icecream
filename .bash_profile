@@ -56,6 +56,10 @@
 	
 	#unsafechrome: run chrome in unsafe mode
 	alias unsafechrome="open -a Google\ Chrome --args --disable-web-security"
+	
+	#jsw: run jekyll server in watch mode
+	alias jsw="jekyll serve --watch"
+	
 
 	
 # -----
