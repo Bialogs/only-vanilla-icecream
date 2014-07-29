@@ -1,0 +1,10 @@
+{
+  "installed_packages":
+  [
+    "Arduino-like IDE",
+    "BeautifyRuby",
+    "Git",
+    "HTMLBeautify",
+    LaTeXTools
+  ]
+}
