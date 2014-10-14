@@ -77,7 +77,7 @@
 	fi
 	
 	# Load NVM
-	[ -s "/Users/kfagan/.nvm/nvm.sh" ] && . "/Users/kfagan/.nvm/nvm.sh"
+	[ -s "~/.nvm/nvm.sh" ] && . "~/.nvm/nvm.sh"
 
 # ----
 # PATH
@@ -118,3 +118,6 @@
 			echo "'$1' is not a valid file"
 		fi
 	}
+	
+	# be: run commands in the context of the bundle
+	be () { bundle exec $1 ; }
