@@ -60,7 +60,8 @@
 	#jsw: run jekyll server in watch mode
 	alias jsw="jekyll serve --watch"
 	
-
+	# subl: shorten the sublime command, which starts sublime.
+  	alias subl="sublime"
 	
 # -----
 # Misc.
