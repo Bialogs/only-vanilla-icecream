@@ -85,6 +85,7 @@
 	export PATH="/usr/local/sbin:$PATH"
 	export PATH="$HOME/.rbenv/bin:$PATH"
 	export PATH="~/macports/bin:~/macports/sbin:$PATH"
+	export PATH="/usr/local/packer:$PATH"
 
 # --------
 # Commands
