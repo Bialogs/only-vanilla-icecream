@@ -60,6 +60,9 @@
 	#jsw: run jekyll server in watch mode
 	alias jsw="jekyll serve --watch"
 	
+	#cdkinit: Sets the Chef Development Kit Ruby as default for the session.
+	alias cdkinit='eval "$(chef shell-init bash)"'
+	
 # -----
 # Misc.
 # -----
