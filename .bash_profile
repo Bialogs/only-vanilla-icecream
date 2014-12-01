@@ -120,3 +120,28 @@
 	
 	# be: run commands in the context of the bundle
 	be () { bundle exec $1 ; }
+	
+	# profchang: change the alwayson profile
+	profchang () { 
+		case $1 in
+			1)	if [ -e ~/Documents/VPN\ Profiles/1.xml ]; then
+								rm /opt/cisco/anyconnect/profile/* ;
+								cp ~/Documents/VPN\ Profiles/1.xml /opt/cisco/anyconnect/profile/ ;
+							else
+								echo "1 profile does not exist in correct directory." ;
+							fi ;;
+			2)		if [ -e ~/Documents/VPN\ Profiles/2-vpn.xml ]; then
+								rm /opt/cisco/anyconnect/profile/* ;
+								cp ~/Documents/VPN\ Profiles/2-vpn.xml /opt/cisco/anyconnect/profile/ ;
+							else
+								echo "2 profile does not exist in correct directory." ;
+							fi ;;
+			3)	if [ -e ~/Documents/VPN\ Profiles/3-vpn.xml ]; then
+								rm /opt/cisco/anyconnect/profile/* ;
+								cp ~/Documents/VPN\ Profiles/3-vpn.xml /opt/cisco/anyconnect/profile/ ;
+							else
+								echo "3 profile does not exist in correct directory." ;					
+							fi ;;
+			*)	echo "No profile configured for '$1'" ;;
+		esac
+	}
