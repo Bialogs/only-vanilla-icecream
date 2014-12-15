@@ -14,7 +14,7 @@
 
 # - Amazon Web Services
 	# Amazon EC2 API Tools
-	export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0/
+	export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 	# Amazon EC2 Access Key
 	export AWS_ACCESS_KEY=
 	# Amazon EC2 Secret Key
