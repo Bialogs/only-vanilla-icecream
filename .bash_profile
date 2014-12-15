@@ -113,9 +113,7 @@
 	# export PATH=$PATH:~/bin
 	export PATH="/usr/local/bin:$PATH"
 	export PATH="/usr/local/sbin:$PATH"
-	export PATH="/usr/local/packer:$PATH"
 	export PATH="$HOME/.rbenv/bin:$PATH"
-	export PATH="~/macports/bin:~/macports/sbin:$PATH"
 	export PATH="$PATH:$EC2_HOME/bin"
 	export PATH="/usr/local/packer:$PATH"
 
