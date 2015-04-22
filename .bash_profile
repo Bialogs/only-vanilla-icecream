@@ -118,7 +118,12 @@
 
   # Make Chef's Development Kit Ruby the default Ruby.
   # eval "$(chef shell-init bash)"
-
+  
+  # Configure boot2docker
+	eval "$(boot2docker shellinit 2> /dev/null)"
+	
+	# Load Pyenv
+	if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # ----
 # PATH
 # ----
@@ -206,3 +211,8 @@
       *)  echo "No profile configured for '$1'" ;;
     esac
   }
+  
+	# Get the IP of a running Docker instance. 
+	docker-ip() { 
+		docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"	
+	}
