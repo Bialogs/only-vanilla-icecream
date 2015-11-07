@@ -188,6 +188,17 @@
                   cp ~/Documents/VPN\ Profiles/2.xml /opt/cisco/anyconnect/profile/ ;
                   echo "Force quitting Cisco AnyConnect Secure Mobility Client to load new profile." ;
                   kill -9 $(ps -Ac -o pid,comm | awk '/^ *[0-9]+ Cisco AnyConnect Secure Mobility Client$/ {print $1}');
+                  retval=$?
+                  if [ $RETVAL -eq 0 ]; then
+                    # Do nothing, kill succeeded
+                  else
+                    echo "Can't find AnyConnect PID to kill. Trying killall." ;
+                    killall "Cisco AnyConnect Secure Mobility Client" ;
+                  fi
+                  networksetup -setairportpower airport off ;
+                  sleep 1 ;
+                  networksetup -setairportpower airport on ;
+                fi
                 fi
                 rm /opt/cisco/anyconnect/profile/* ;
                 cp ~/Documents/VPN\ Profiles/2.xml /opt/cisco/anyconnect/profile/ ;
@@ -198,10 +209,21 @@
                 if [ -e /opt/cisco/anyconnect/profile/1.xml ]; then
                   echo "1 Profile Detetected..." ;
                   # Force Quit AnyConnect After Movement of Profile When 1 Was Last to Reset Settings
-                  rm /opt/cisco/anyconnect/profile/*;
+                  rm /opt/cisco/anyconnect/profile/* ;
                   cp ~/Documents/VPN\ Profiles/3.xml /opt/cisco/anyconnect/profile/ ;
                   echo "Force quitting Cisco AnyConnect Secure Mobility Client to load new profile." ;
-                  kill -9 $(ps -Ac -o pid,comm | awk '/^ *[0-9]+ Cisco AnyConnect Secure Mobility Client$/ {print $1}');
+                  kill -9 $(ps -Ac -o pid,comm | awk '/^ *[0-9]+ Cisco AnyConnect Secure Mobility Client$/ {print $1}') ;
+                  retval=$?
+                  if [ $RETVAL -eq 0 ]; then
+                    # Do nothing, kill succeeded
+                  else
+                    echo "Can't find AnyConnect PID to kill. Trying killall." ;
+                    killall "Cisco AnyConnect Secure Mobility Client" ;
+                  fi
+                  networksetup -setairportpower airport off ;
+                  sleep 1 ;
+                  networksetup -setairportpower airport on ;
+                fi
                 fi
                 rm /opt/cisco/anyconnect/profile/* ;
                 cp ~/Documents/VPN\ Profiles/3.xml /opt/cisco/anyconnect/profile/ ;
