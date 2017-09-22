@@ -87,12 +87,6 @@
       echo "'$1' is not a valid file"
     fi
   }
-
-  # Get the IP of a running Docker instance.
-  docker-ip() {
-    docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
-  }
-
   parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
   }
