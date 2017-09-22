@@ -1,14 +1,19 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-	"font_size": 13,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"ensure_newline_at_eof_on_save": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"index_files": true,
+	"rulers":
+	[
+		80
+	],
 	"save_on_focus_lost": true,
+	"scroll_past_end": true,
 	"tab_size": 2,
 	"tab_width": 2,
 	"translate_tabs_to_spaces": true,
-    	"trim_trailing_white_space_on_save": true,
-    	"ensure_newline_at_eof_on_save": true,
+	"trim_trailing_white_space_on_save": true
 }
