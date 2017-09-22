@@ -1,10 +1,14 @@
 {
   "installed_packages":
   [
-    "Arduino-like IDE",
-    "BeautifyRuby",
-    "Git",
-    "HTMLBeautify",
-    LaTeXTools
+    "AdvancedNewFile",
+    "All Autocomplete",
+    "Better CoffeeScript",
+    "Dockerfile Syntax Highlighting",
+    "GitGutter",
+    "Haml",
+    "Javascript Beautify",
+    "Package Control",
+    "Pretty JSON"
   ]
 }
