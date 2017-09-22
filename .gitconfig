@@ -1,20 +1,26 @@
 [user]
-	name = Kyle Fagan
-	email = 
+  name = Kyle Fagan
+  email =
+  signingkey =
 [credential]
-	helper = osxkeychain
-[github]
-	user = Bialogs
-	token = 
-
+  helper = osxkeychain
 [push]
-	default = simple
+  default = simple
 [http]
 [https]
 [mergetool "sublime"]
-	cmd = subl -w $MERGED
-	trustExitCode = false
+  cmd = subl -w $MERGED
+  trustExitCode = false
 [merge]
-	tool = sublime
+  tool = sublime
 [core]
-	editor = subl -n -w
+  editor = subl -n -w
+[commit]
+  gpgsign = true
+[gpg]
+  program = /usr/local/bin/gpg
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
