@@ -7,13 +7,21 @@
 # Environment Variables
 # ---------------------
 
-# - Editor Configuration
-  export EDITOR=/usr/local/bin/subl
   export GPG_TTY=$(tty)
+
+  export PS1="\u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+  export EDITOR='/usr/local/bin/subl -w'
 
 # -------
 # Aliases
 # -------
+  # np: remove proxy environment variables for use off-network
+  alias np="unset http_proxy;unset HTTP_PROXY;unset RSYNC_PROXY;unset HTTPS_PROXY;unset https_proxy; unset no_proxy"
+
+  # pp: export proxy environment variables for use on-network
+  alias pp='export http_proxy="";export https_proxy="";export HTTP_PROXY="";export HTTPS_PROXY=""; export no_proxy="127.0.0.1, *.local, 169.254/16, *."'
+
   # shrs: shell reset
   alias shrs="exec $SHELL -l"
 
@@ -32,30 +40,32 @@
   # gitlog: compact and colorized git log
   alias gitlog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-  # ctf: change directory to project
-  alias ctf="cd ~/Documents/ctf"
-
-  # servethisfolder: serve this folder over port 8000 HTTP
-  alias servethisfolder="ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd).start'"
+  #gitme-remote-branches: Retrieve all remote git branches
+  alias gitme-remote-branches='for remote in `git branch -r`; do git branch --track $remote; done'
 
 # -----
 # Misc.
 # -----
-  # Start RBENV
+  # Start *env
   eval "$(rbenv init -)"
+  eval "$(jenv init -)"
+  eval "$(pyenv init -)"
 
-  # Git tab completion
-  if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
-    . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+  # Homebrew command tab-completion
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+
+  # Git command tab-completion
+  if [ -f /usr/local/etc/bash_completion.d ]; then
+    . ~/.git-completion.bash
   fi
 
 # ----
 # PATH
 # ----
-  # export PATH=$PATH:~/bin
   export PATH="/usr/local/bin:$PATH"
   export PATH="/usr/local/sbin:$PATH"
-  export PATH="$HOME/.rbenv/bin:$PATH"
 
 # --------
 # Commands
@@ -87,8 +97,7 @@
       echo "'$1' is not a valid file"
     fi
   }
+
   parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
   }
-
-  export PS1="\u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
