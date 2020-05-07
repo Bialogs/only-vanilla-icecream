@@ -2,13 +2,14 @@
   "installed_packages":
   [
     "AdvancedNewFile",
-    "All Autocomplete",
+    "Babel",
     "Better CoffeeScript",
+    "Crystal",
     "Dockerfile Syntax Highlighting",
-    "GitGutter",
+    "Git",
+    "Git blame",
     "Haml",
-    "Javascript Beautify",
-    "Package Control",
-    "Pretty JSON"
+    "Pretty JSON",
+    "Vue Syntax Highlight"
   ]
 }
