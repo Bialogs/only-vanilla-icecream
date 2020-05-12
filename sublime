@@ -1,31 +1,13 @@
 {
-	"added_words":
-	[
-		"prioritization",
-		"rebase",
-		"rebased",
-		"Rubocop",
-		"passphrase",
-		"Wiki",
-		"wiki",
-		"prepended"
-	],
 	"binary_file_patterns":
 	[
-		"tmp/",
-		"log/",
-		"public/assets",
-		"*.iso",
-		"coverage/"
+		"*.iso"
 	],
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
-	"ensure_newline_at_eof_on_save": true,
-	"font_size": 15,
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"index_files": true,
 	"rulers":
 	[
 		120
@@ -35,5 +17,6 @@
 	"tab_size": 2,
 	"tab_width": 2,
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"ensure_newline_at_eof_on_save": true
 }
